@@ -13,7 +13,7 @@ router.post('/register',async(req,res) =>{
         }
         const hashPassword = await bcrypt.hash(password,10);
         await db.query("INSERT INTO users (username, email, password) VALUES(?,?,?)",[username, email, hashPassword])
-        return res.status(201).json({message:"user created successfully"})
+        return res.status(201).json({message:"user created Successfully"})
 
     }catch(err){
         return res.status(500).json(err);
